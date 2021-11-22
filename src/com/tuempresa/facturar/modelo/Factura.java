@@ -19,6 +19,10 @@ members=                                     //Estos miembros no tendrán a los c
 "detalles;" + 
 "observaciones"
 )
+
+@Tab(baseCondition = "eliminado = false")        //@Tab. Esta anotación te permite definir la forma en que los datos tabulares (los datos mostrados en modo lista) 
+                                                 //son visualizados y te permite además definir una condición
+@Tab(name="Eliminado", baseCondition = "eliminado = true") // Tab con nombre
 public class Factura extends DocumentoComercial {
 
 	@OneToMany(mappedBy="factura")
@@ -26,4 +30,10 @@ public class Factura extends DocumentoComercial {
 	private Collection<Pedido> pedidos;
 	
             //Con esto añadimos la colección de pedidos
+	
+	//@Hidden // No se mostrará por defecto en las vistas y los tabs
+	//@Column(columnDefinition="BOOLEAN DEFAULT FALSE") // Para llenar con falses en lugar de con nulos 
+	//USAMOS @Column(columnDefinition=) para llenar la columna con falses en lugar de con nulos.
+	//boolean eliminado;
+//Se quita porque lo eliminamos par Factura y todas las demas entidades
 }

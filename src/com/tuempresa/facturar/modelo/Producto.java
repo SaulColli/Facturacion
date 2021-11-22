@@ -6,6 +6,8 @@ import javax.persistence.*;
 
 import org.openxava.annotations.*;
 
+import com.tuempresa.facturar.anotaciones.*;
+
 import lombok.*;
 
 @Entity @Getter @Setter
@@ -38,6 +40,7 @@ String fotos;
 @Stereotype("TEXTO_GRANDE")
 String observaciones;
 
-
+@Column(length=13) @ISBN(buscar=false)  // Esta anotación indica que esta propiedad tiene que validarse como un ISBN
+String isbn;
 
 }

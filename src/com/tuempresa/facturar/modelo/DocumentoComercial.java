@@ -25,7 +25,8 @@ import lombok.*;
 "}"
 		)
 
-abstract public class DocumentoComercial extends Identificable{
+//abstract public class DocumentoComercial extends Identificable{
+abstract public class DocumentoComercial extends Eliminable{  //Eliminable hereda de Identificable, para entender esto; ver el código de la superclase Eliminable
 	//Añadimos el modificador abstract
 	
 	@DefaultValueCalculator(CurrentYearCalculator.class)                      // El DefaultValueCalculator sirve para establecer valores por defecto para que el usuario no tenga que escribir los valores en donde CurrentYearCalculator.class sirve para calcular el año
